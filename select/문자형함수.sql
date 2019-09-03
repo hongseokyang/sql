@@ -12,8 +12,31 @@ select lower('SEouL'), lcase('SEOUL');
 -- substring()
 select substring('Happy Day', 3, 2);
 
+-- substring_index()
+select substring_index('itcen.co.kr', '.', 2);
+select substring_index('itcen.co.kr', '.', -2);
+
+-- right()
+select right('itcen.co.kr', 2);
+
+-- left()
+select left('itcen.co.kr', 5);
+
 select first_name as '이름', substring(hire_date, 1, 4) as '입사년도'
 from employees;
+
+-- length()
+select length('아이티센');
+
+-- char_length()
+select char_length('아이티센');
+
+-- cast()
+select cast(1234 as char);
+select cast('1992-11-17' as date);
+
+-- locate()
+select locate('co', 'itcen.co.kr');
 
 -- lpad, rpad : 정렬
 select lpad('1234', 10, '-');
@@ -38,3 +61,12 @@ select emp_no, trim(both '*' from lpad(cast(salary as char), 10, '*')) as '급�
 from salaries
 where from_date like '2001%'
   and salary < 70000;
+  
+-- reverse()
+select reverse(title)
+from titles
+where emp_no = 10001;
+
+-- replace()
+select replace("yang hong seok", "hong seok", "홍석");
+
