@@ -33,6 +33,6 @@ where to_date like '9999%';
 
 -- 문제6
 -- 최고 어린 사원의 나이와 최 연장자의 나이는?
-select (date_format(now(), '%Y')-date_format(min(birth_date), '%Y')) as '연장자'
-	 , (date_format(now(), '%Y')-date_format(max(birth_date), '%Y')) as '연소자' 
+select (date_format(curdate(), '%Y')-date_format(min(birth_date), '%Y')) as '연장자'
+	 , (date_format(curdate(), '%Y')-date_format(max(birth_date), '%Y')) as '연소자' 
 from employees;
